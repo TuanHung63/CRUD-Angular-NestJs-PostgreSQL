@@ -1,0 +1,16 @@
+<div class="container mt-3">
+  <div class="row justify-content-center align-items-center " >
+    <div class="col-md-4 col-sm-6" style="min-width:300px ;" *ngFor='let user of users'>
+      <ul class="list-group">
+        <li class="list-group-item">Name:{{user.fullname}}</li>
+        <li class="list-group-item">Number Phone: {{user.numberPhone}}</li>
+        <li class="list-group-item">Date of Birth: {{user.birthDay}}</li>
+        <li class="list-group-item">Email: {{user.email}} </li>
+        <li class="list-group-item text-right ">
+          <a [routerLink]="['/edit-user',user.id]" (click)="editUser()" class="btn btn-info mr-2">Edit</a>
+          <button type="button" (click)="deleteUser(user)" class="btn btn-danger">Delete</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
